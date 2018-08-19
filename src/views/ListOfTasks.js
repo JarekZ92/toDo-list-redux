@@ -21,7 +21,37 @@ const listOfTasks = (props) => (
             onClick={props._addTaskAction} 
             label="Add task" 
             primary={true}
-            fullWidth={true} />
+            fullWidth={true} 
+            />
+    </div>
+    <div>
+      {
+        props._isTasksAreLoading ?
+        'Loading...'
+        :
+        props._tasks.map(task => (
+          <div
+          task={task.task}
+          key={task.id}
+          id={task.is}
+          />
+        ))
+    }
     </div>
   </div>
 )
+
+const mapStateToProps = state => ({
+  _tasks: state.tasks.tasks,
+  _isTasksAreLoading: state.tasks.isTasksAreLoading
+})
+
+const mapDispatchToProps = dispatch => ({
+  _addTasksAction: () => dispatch(addTaskAction()),
+  _handleChangeAction: (value) => dispatch(handleChangeAction(value))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(listOfTasks)
