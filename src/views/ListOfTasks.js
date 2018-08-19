@@ -5,7 +5,7 @@ import RaisedButton from "material-ui/RaisedButton"
 import Task from "./Task"
 import { ListItem } from "material-ui/List"
 
-const listOfTasks = props => (
+const listOfTasks = (props) => (
   <div>
     <div>
       <TextField 

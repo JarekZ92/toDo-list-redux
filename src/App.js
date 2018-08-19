@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import ListOfTasks from "./views/ListOfTasks";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
-    )
+      <MuiThemeProvider>
+        <ListOfTasks />
+      </MuiThemeProvider>
+    );
   }
 }
 
-export default App
+export default App;
