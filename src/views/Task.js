@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {ListItem} from 'material-ui/List'
+import { ListItem } from 'material-ui/List'
 
 const Task = (props) => (
     <div>

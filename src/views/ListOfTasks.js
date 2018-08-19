@@ -3,8 +3,8 @@ import { connect } from "react-redux"
 import TextField from "material-ui/TextField"
 import RaisedButton from "material-ui/RaisedButton"
 import Task from "./Task"
-import { ListItem } from "material-ui/List"
-import {addTaskAction, handleChangeAction} from '../state/tasks'
+import { ListItem } from 'material-ui/List'
+import {addTaskAction, handleChangeAction} from '../state/MyTasks'
 
 
 const listOfTasks = (props) => (

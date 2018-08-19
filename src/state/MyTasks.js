@@ -40,11 +40,11 @@ export default (state = initialState, action) => {
         ...state,
         tasks: action.data
       };
-    case REMOVE_TASK:
-      return {
-        ...state,
-        tasks: action.data
-      };
+    // case REMOVE_TASK:
+    //   return {
+    //     ...state,
+    //     tasks: action.data
+    //   };
     case TASKS_STARTED_LOADING:
       return {
         ...state,
