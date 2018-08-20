@@ -7,8 +7,8 @@ const TASKS_STOPPED_LOADING = "tasks/TASKS_STOPPED_LOADING";
 
 export const addTaskAction = value => ({ type: ADD_TASK, value });
 export const setTasksAction = data => ({ type: SET_TASK, data });
-export const removeTasksAction = () => ({ type: REMOVE_TASK });
-export const handleChangeAction = event => ({
+export const removeTasksAction = (uuid) => ({ type: REMOVE_TASK, uuid });
+export const handleChangeAction = (event) => ({
   type: HANDLE_CHANGE,
   text: event.target.value
 });
@@ -40,11 +40,13 @@ export default (state = initialState, action) => {
         ...state,
         tasks: action.data
       };
-    // case REMOVE_TASK:
-    //   return {
-    //     ...state,
-    //     tasks: action.data
-    //   };
+    case REMOVE_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.filter(task => {
+          return task.uuid !== action.uuid
+        })
+      };
     case TASKS_STARTED_LOADING:
       return {
         ...state,
