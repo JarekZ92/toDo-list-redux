@@ -20,7 +20,7 @@ const listOfTasks = (props) => (
   <div>
     <Paper style={styles}>
       <TextField
-        onChange={value => props._handleChangeAction(value)}
+        onChange={(value) => props._handleChangeAction(value)}
         placeholder={"Enter new task here"}
         type="text"
         value={props._task}
@@ -38,10 +38,10 @@ const listOfTasks = (props) => (
         props._isTasksAreLoading ?
         'Loading tasks, please wait for a moment'
         :
-        props._tasks.map((task, uid) => (
+        props._tasks.map((task, uuid) => (
             <ListItem 
-            key={uid}
-            rightIcon={<Delete onClick={()=> props._removeTasksAction(task.uid)}/>}
+            key={uuid}
+            rightIcon={<Delete onClick={()=> props._removeTasksAction(task.uuid)}/>}
             >
             {task.taskName} 
             </ListItem>

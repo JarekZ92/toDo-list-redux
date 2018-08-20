@@ -5,8 +5,8 @@ const HANDLE_CHANGE = "tasks/HANDLE_CHANGE";
 const TASKS_STARTED_LOADING = "tasks/TASKS_STARTED_LOADING";
 const TASKS_STOPPED_LOADING = "tasks/TASKS_STOPPED_LOADING";
 
-export const addTaskAction = value => ({ type: ADD_TASK, value });
-export const setTasksAction = data => ({ type: SET_TASK, data });
+export const addTaskAction = (value) => ({ type: ADD_TASK, value });
+export const setTasksAction = (data) => ({ type: SET_TASK, data });
 export const removeTasksAction = (uuid) => ({ type: REMOVE_TASK, uuid });
 export const handleChangeAction = (event) => ({
   type: HANDLE_CHANGE,
