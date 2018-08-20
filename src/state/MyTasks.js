@@ -21,7 +21,7 @@ export const tasksStoppedLoadingAction = () => ({
 
 const initialState = {
   tasks: [],
-  text: "",
+  text: '',
   isTasksAreLoading: false
 };
 
@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
         ...state,
         tasks: state.tasks.concat({
           taskName: state.text,
-          uuid: Date.now()
+          uuid: Date.now(),
         })
       };
     case SET_TASK:

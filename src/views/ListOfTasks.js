@@ -3,13 +3,12 @@ import { connect } from "react-redux";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Delete from "material-ui/svg-icons/action/delete";
-import { ListItem } from "material-ui/List";
+import { ListItem } from 'material-ui/List'
 import Paper from "material-ui/Paper";
 import {
   addTaskAction,
   handleChangeAction,
-  onAddTaskClickAction,
-  deleteTaskAction
+  removeTasksAction
 } from "../state/MyTasks";
 
 const styles = {
@@ -17,7 +16,7 @@ const styles = {
   padding: "20px"
 };
 
-const listOfTasks = props => (
+const listOfTasks = (props) => (
   <div>
     <Paper style={styles}>
       <TextField
@@ -32,7 +31,7 @@ const listOfTasks = props => (
         label="Add task"
         primary={true}
         fullWidth={true}
-      />
+        />
     </Paper>
     <Paper style={styles}>
       {
@@ -42,7 +41,7 @@ const listOfTasks = props => (
         props._tasks.map((task, uid) => (
             <ListItem 
             key={uid}
-            rightIcon={<Delete onClick={()=> props._deleteTaskAction(task.uid)}/>}
+            rightIcon={<Delete onClick={()=> props._removeTasksAction(task.uid)}/>}
             >
             {task.taskName} 
             </ListItem>
@@ -59,7 +58,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   _addTasksAction: () => dispatch(addTaskAction()),
-  _handleChangeAction: value => dispatch(handleChangeAction(value))
+  _handleChangeAction: (value) => dispatch(handleChangeAction(value)),
+  _removeTasksAction: (uuid) => dispatch(removeTasksAction(uuid))
 });
 
 export default connect(
