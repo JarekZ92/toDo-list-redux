@@ -57,7 +57,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  _addTasksAction: () => dispatch(addTaskAction()),
+  _addTaskAction: () => dispatch(addTaskAction()),
   _handleChangeAction: (value) => dispatch(handleChangeAction(value)),
   _removeTasksAction: (uuid) => dispatch(removeTasksAction(uuid))
 });
